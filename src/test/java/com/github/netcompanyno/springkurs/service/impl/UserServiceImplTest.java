@@ -11,6 +11,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.annotation.IfProfileValue;
@@ -19,7 +20,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.github.netcompanyno.springkurs.db.dao.UserDao;
 import com.github.netcompanyno.springkurs.domain.User;
 import com.github.netcompanyno.springkurs.service.UserService;
-import com.github.netcompanyno.springkurs.service.impl.UserServiceImpl;
 
 @RunWith(SpringRunner.class)
 public class UserServiceImplTest {
@@ -36,7 +36,6 @@ public class UserServiceImplTest {
     }
     
     @Test
-    @IfProfileValue(name ="oppgave", value ="del2")
     public void getById_withUserIdThatDoesNotExist_shouldReturnNull() {
         
         // Arrange

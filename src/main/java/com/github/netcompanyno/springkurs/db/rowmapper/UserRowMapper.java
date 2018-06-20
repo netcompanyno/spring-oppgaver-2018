@@ -12,8 +12,10 @@ public class UserRowMapper implements RowMapper<User>{
 
     @Override
     public User mapRow(final ResultSet resultSet, final int rowNum) throws SQLException {
-        // TODO Auto-generated method stub
-        throw new NotImplementedException();
+        return new User(resultSet.getLong("id"),
+                resultSet.getString("email"),
+                resultSet.getString("firstname"),
+                resultSet.getString("lastname"));
     }
 
 }

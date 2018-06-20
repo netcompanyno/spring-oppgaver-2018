@@ -10,21 +10,24 @@ import com.github.netcompanyno.springkurs.db.dao.UserDao;
 import com.github.netcompanyno.springkurs.domain.User;
 import com.github.netcompanyno.springkurs.service.UserService;
 
+@Service
 public class UserServiceImpl implements UserService {
     
+    private final UserDao userDao;
+    
+    @Autowired
     public UserServiceImpl(final UserDao userDao) {
+        this.userDao = userDao;
     }
     
     @Override
     public List<User> getAll() {
-        // TODO Auto-generated method stub
-        throw new NotImplementedException();
+        return userDao.getAll();
     }
 
     @Override
     public User getById(final long id) {
-        // TODO Auto-generated method stub
-        throw new NotImplementedException();
+        return userDao.getById(id);
     }
 
     @Override
