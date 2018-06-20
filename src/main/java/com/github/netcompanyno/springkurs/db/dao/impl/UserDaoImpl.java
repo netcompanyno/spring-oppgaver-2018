@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao {
     @Transactional(readOnly = true)
     @Override
     public User getById(final long id) {
-        return DataAccessUtils.requiredSingleResult(
+        return DataAccessUtils.singleResult(
                 namedTemplate.query("SELECT * FROM USERS WHERE id = :id",
                         new MapSqlParameterSource().addValue("id", id),
                         new UserRowMapper()));

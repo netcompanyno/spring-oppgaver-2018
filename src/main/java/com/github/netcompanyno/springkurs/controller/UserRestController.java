@@ -31,7 +31,11 @@ public class UserRestController {
     
     @GetMapping("/user/{id}")
     public ResponseEntity<User> getById(@PathVariable("id") long id) {
-        return ResponseEntity.ok().body(userService.getById(id));
+        final User user = userService.getById(id);
+        if(user == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok().body(user);
     }
     
 }
