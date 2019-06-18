@@ -3,8 +3,6 @@ package com.github.netcompanyno.springkurs.service.impl;
 import java.util.List;
 
 import org.apache.commons.lang.NotImplementedException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.github.netcompanyno.springkurs.db.dao.UserDao;
 import com.github.netcompanyno.springkurs.domain.User;
